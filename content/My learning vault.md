@@ -1,6 +1,6 @@
 ---
 title: My learning vault
-draft: true
+draft: false
 tags:
 ---
 # What to expect in here?
