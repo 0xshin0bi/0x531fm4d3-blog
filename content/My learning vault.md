@@ -1,0 +1,211 @@
+---
+title: My learning vault
+draft: true
+tags:
+---
+# What to expect in here?
+
+In this blog, I will talk about my note-taking experience with Notion and the various cons I encountered while using it. I will then highlight the Obsidian features that significantly improved both my note-taking process effectively making my notes much better. After briefly explaining how I structured my Vault, I will present my setup, including templates (with some JavaScript snippets), folder organization, and the plugins I use. For everyone who wants to give it a try, I also provide a link to a ready-to-download Vault hosted on my GitHub.
+**Spoiler alert** - No AI whatsoever in this vault :), while I sometime use llm for finding good resources or summarizing them for understanding, I find my learning more effective when I write notes in my own words.
+
+# The struggles — my note-taking experience before Obsidian
+
+For a long time, I struggled making my learning notes effective, to the point they will be re-usable on a daily basis. I bounced between Notion and Evernote, trying to effectively summarize what I was learning, but the fact I was never going back to the notes clearly stated I'm doing something wrong. A few things made it especially frustrating while using Notion:
+
+## Folder hierarchies were a mess
+
+I tried sticking with traditional folder-based organization, thinking I could group related notes under the same parent directory. While it seemed like a good idea at first, eventually everything turned into a  mess of nested folders, and it wasn’t scalable. To try and make things more manageable, I began creating a separate note for each book or course I went through. That led to giant, bloated notes packed with highlights of things I especially liked: green for useful tools, blue for smart code snippets, and so on. Honestly, it was hard to find these "gems" in the monstrous notes, so I'd rarely went back and actually looked at those notes again.
+
+## Search was bad
+
+Whenever I needed to dig up a specific idea/research technique, I encountered a big problem; The built-in search in those apps just wasn’t good enough. looking for the specific info was actually quicker to just look online. moreover, even if i had an idea where it should be, the big "one-per-book notes" made it really hard to find exactly what I wanted.
+
+## The lags...
+
+Notion in particular really struggled with my "note-per-book" approach as pages took forever to load. Trying to quickly jump between notes or update something mid-thought was frustrating enough to make me want to stop writing entirely.
+
+# Then came Obsidian
+
+Things changed when my friend (and incredible security researcher) Yuval Nativ introduced me to Obsidian — a markdown-based, local-first note-taking app. It has a great free version too, which is what I am currently using.
+
+There are already tons of great tutorials out there (I'll link some on the bottom) on how to set it up, so instead, I want to focus on why I personally think it is the ultimate note-taking solution:
+
+
+# Finding My Way in Obsidian
+
+Obsidian does have a learning curve. It’s so flexible that the hardest part is figuring out how you want to use it, and assembling the initial structure (mostly plugins and their configurations, templates, folders, naming conventions,hotkeys).
+I gave myself a few weeks to get familiar with different plugins and configurations. During that time, I came across the **Zettelkasten** method—an approach based on atomic notes and linking ideas together. While I connected with the idea behind it, I needed to do some adjustments to ZettelKasten setups i encountered due to the technical nature of the subjects I like digging into.
+
+# Why Obsidian?
+
+## It’s fast
+
+Obsidian runs locally, which means everything is super fast. Open the app, your vault loads, and you’re off. 
+
+
+## Linked notes will make your own personal Wikipedia
+
+ Notes can be linked together using simple syntax, and backlinks are generated automatically. This made it easy for me to connect related concepts—like tools, techniques, or terms—while keeping each note focused and atomic. Whenever a topic felt even slightly outside the scope of the current note (but still related to it), I could just create a new one and link them together.
+
+## Small notes, big value
+
+A by product of the previous point: I stopped writing massive, monolithic summaries and started breaking things down into bite-sized notes. This made each note easier to maintain, and I could build on them over time. As my vault grew, individual notes became richer, more connected, and far more useful.
+
+
+## Templates for structure
+
+Obsidian lets you create templates for different types of notes. Each one can have pre-filled sections, metadata, and prompts; This keeps note-taking process consistent, because it forces me to think about what kind of information was worth keeping, essentially making note-taking process more intentional.
+
+## Plugins ftw
+
+There’s a plugin for nearly everything—syntax highlighting, diagrams, whiteboards, visualizations, even Python integration.
+And since they’re just JavaScript under the hood, you can (and should honestly) audit the ones you install (and yes, there’s a plugin to help you manage plugin trust too 😄).
+
+## Metadata with YAML
+
+Every note can have a YAML metadata block at the note's top (called frontmatter in Obsidian)  where you can store key-value pairs for different purposes. With a little help from community plugins like Templater, I even set things up so I get prompted to fill in certain metadata fields when I create a new note. This way, I don’t forget to capture the important stuff. I personally use them for additional note categorization and sub-categorization, linking the notes to the source where it came from, and easen the search by adding aliases to the notes.
+
+
+# Some explanations before the vault setup
+
+## what is a vault?
+
+a vault is simply the folder on our local file system where obsidian stores your notes and the configurations of your vault as well (plugins, themes, etc.)
+
+## why does frontmatter matter? 
+
+as mentioned before, frontmatter is the yaml structure located on the note's top. it could be queried using Dataview into lists and tables, which can provide a high-level overview of whatever's in your vault. keep in mind that at this time, **there's no native way to query other information from within the note itself other than frontmatter**.
+
+# ./My vault --verbose
+
+**Heads up - this part is long.**
+if you're building your own note-taking Vault or want to try mine, then please bare with me because it will all make sense in the end.
+
+## Plugins
+
+below are the community plugins installed on the Vault. each has its own short description and how I use it in the Vault. I added some screenshots of how it looks like inside 
+
+### Templater
+
+Templater is a powerful template engine for Obsidian that automates note creation using JavaScript-based logic. It enables dynamic content generation, user input prompts, and advanced workflows within templates. I use JavaScript snippets in the templates' frontmatter to quickly insert data when creating a new note, and by doing so ensure that important metadata related to each note is properly documented.
+
+![[Pasted image 20250428161711.png]]
+_how the snippets like in the templates_
+
+![[Pasted image 20250428154018.png]]
+_an example of how the JS takes affect when creating a new note_
+
+### QuickAdd
+
+QuickAdd goes hand in hand with Templater. The plugin is ideal for building fast, repeatable workflows with emphasis on user-defined actions, templates, and macros. I use it to quickly create different types of notes through a keyboard shortcut and a few mouse clicks.
+
+![[Pasted image 20250428154212.png]]
+_an example of quickadd used to create notes with a certain prefix, in a specific folder (couldn't capture in the SS all the options possible_
+
+### Omnisearch
+
+Omnisearch provides an advanced search experience in Obsidian, allowing you to query your entire vault by content, tags, links, and other metadata. It also offers the option to index PDFs and images through OCR, which I find particularly useful. The search algorithm is well-designed, making it easy to quickly find exactly what you are looking for.
+
+![[Pasted image 20250428154334.png]]
+_showing Omnisearch's awesome capabilities_
+
+### Dataview
+
+Dataview is essential for building dashboards, summaries, and structured views across your vault based on your notes frontmatter values and tags. it has basic query options, but also support more advance queries based on JS. I use it for grouping my vault's tasks, and creating a per-resource table of terms i encountered in them.
+
+![[Pasted image 20250428154803.png]]
+_using dataview to show all tasks open in the vault in one place_
+
+### Excalidraw
+
+Excalidraw is an integration of the Excalidraw visual whiteboard tool directly within Obsidian. It allows for the creation of sketches, diagrams, and mind maps, all saved as markdown-linked files. The plugin is useful for visual thinking and planning workflows alongside traditional notes. I use it to create visualization of more complex stuff I encounter.
+
+![[Pasted image 20250428160039.png]]
+_sketch made with Excalidraw_
+
+### Plugin Update Tracker
+
+Plugin Update Tracker monitors your installed plugins and records when they are updated. It provides a changelog view directly inside Obsidian for easier tracking of new features and fixes. The plugin helps maintain awareness of changes that could affect your workflows, or potentially malicious code that found its way into the plugin god forbid :).
+
+![[Pasted image 20250428160148.png]]
+_plugin update tracker summary pulled from github; also a direct link to the diff from last version_
+
+### Settings Search
+
+Settings Search enhances Obsidian’s settings interface by adding a search bar to it. It saves alot of time looking for what you're looking for.
+
+![[Pasted image 20250428160330.png]]
+_self explanatory I think_
+
+### Colored Text
+
+Colored Text provides a quick and comfortable way to highlight sentences and words with colors inside your notes. it has some predefined color names and also support custom color hex codes.
+
+### Code Styler
+
+Code Styler customizes the appearance of code blocks in Obsidian by allowing fine-grained control over fonts, backgrounds, padding, and more. It works with both light and dark themes. it just looks alot nicer than the native Obsidian code blocks 
+
+![[Pasted image 20250428161919.png]]
+_supporting syntax highlighting of many coding languages and different text types_
+
+### Recent Files
+
+Recent Files creates a dynamic list of your most recently opened or edited notes in Obsidian. It adds a panel or command for quick access to recently used documents. it makes it very easy editing multiple notes at once without wasting time looking for the last few notes you were in.
+
+![[Pasted image 20250428162043.png]]
+_how Recent Files look like_
+
+### Tasks
+
+Tasks turns standard markdown checkboxes into powerful task management elements, with support for due dates, priorities, recurring tasks, and queries. It enables you to track and organize tasks directly within your notes. I use it mainly when there are aspects that I haven't covered yet in certain notes and do not want to forget. I especially like using Dataview to present current open tasks across the Vault in a single location.
+
+### Update Time on Edit
+
+Update Time on Edit helps maintain accurate metadata by automatically recording when a note was last modified (in the frontmatter. I use it to easily keep track of the last time i made changes to my notes.
+
+# Templates
+
+in this section I will list and provide details for both each templates frontmatter values and note's headlines, along with explanation for them.
+before I go deeper, i'll present the four different templates I'm using, along with correlating examples of what kind of content I might cover in each one:
+1. **origin** - this note is intended for each resource I am currently studying (book, course, research, etc...)
+	1. *say i'm learning malware analysis from some youtuber. i'll save useful information that will help me get back to where i stopped*
+2. **system** - this note is intended for each new system i encounter
+	1. _i encountered x64dbg for the first time. here i'll save cheatsheet info on how to use the system, some pre-config stuff to help me save time if i'll ever set it up from scratch, etc._
+3. **technical explanation** - this type is intended for hands-on step by step explanation of using certain system to perform wanted action.
+	1. _i could describe how can I manually extract decrypted pe file from memory using x64dbg_
+4. **term** - this note is intended to describe more theoretical knowledge
+	1. _i could describe mapped vs unmapped pe files_
+
+## Templates Structure
+
+### Origin
+
+#### frontmatter
+
+```yaml
+created: 2024-12-22T08:34
+updated: 2025-04-21T15:54
+origin_value: <% tp.file.title %>
+type: origin
+started: <%tp.system.suggester(["yes","no"],[true,false],throw_on_cancel=false, placeholder="started writing?")%> // have I started going over the resource?
+aliases:
+  - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
+```
+#### Note headlines
+
+```text
+# Origin Link
+
+# Currently At
+
+# Summary
+
+# Concepts Learned
+
+# Related Origins
+
+# References
+```
+
+
+
