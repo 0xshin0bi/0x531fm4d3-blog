@@ -1,17 +1,24 @@
+/* Import shared base styles */
 @use "./base.scss";
 
+/* ---------------------
+   Headline Colors – Light Mode
+   --------------------- */
+   h1 { color: #7a4e00; }  /* deep amber */
+   h2 { color: #a86400; }  /* rich golden amber */
+   h3 { color: #d88c00; }  /* vibrant saffron */
+   h4 { color: #f0b232; }  /* soft goldenrod */
+   h5 { color: #ffdeb3; }  /* pale peach gold */
+   
 
-/* Light mode: strong turquoise gradient */
-h1 { color: #006d6f; }  /* dark turquoise */
-h1 { color: #009c9f; }  /* medium-dark turquoise */
-h2 { color: #00b8b4; }  /* mid turquoise */
-h3 { color: #33d4cf; }  /* light turquoise */
-h5 { color: #99ece9; }  /* very light turquoise */
-
-/* Dark mode: same gradient but brighter for contrast */
-@media (prefers-color-scheme: dark) {
-    h1 { color: #009c9f; }  /* medium-dark turquoise */
-    h2 { color: #00b8b4; }  /* mid turquoise */
-    h3 { color: #33d4cf; }  /* light turquoise */
-    h4 { color: #99ece9; }  /* very light turquoise */
-}
+/* ---------------------
+   Headline Colors – Dark Mode
+   --------------------- */
+   @media (prefers-color-scheme: dark) {
+    h1 { color: #b25f00; }  /* burnt orange (darkest) */
+    h2 { color: #e18500; }  /* deep tangerine */
+    h3 { color: #f7a325; }  /* strong saffron */
+    h4 { color: #fcbc4b; }  /* amber-gold */
+    h5 { color: #ffd57a; }  /* bright warm gold (lightest) */
+  }
+  
