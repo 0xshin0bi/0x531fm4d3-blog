@@ -31,7 +31,7 @@ Things changed when my friend (and incredible security researcher) Yuval Nativ i
 There are already tons of great tutorials out there (I'll link some on the bottom) on how to set it up, so instead, I want to focus on why I personally think it is the ultimate note-taking solution:
 
 
-# Finding My Way in Obsidian
+# Finding my way in Obsidian
 
 Obsidian does have a learning curve. It’s so flexible that the hardest part is figuring out how you want to use it, and assembling the initial structure (mostly plugins and their configurations, templates, folders, naming conventions,hotkeys).
 I gave myself a few weeks to get familiar with different plugins and configurations. During that time, I came across the **Zettelkasten** method—an approach based on atomic notes and linking ideas together. While I connected with the idea behind it, I needed to do some adjustments to ZettelKasten setups i encountered due to the technical nature of the subjects I like digging into.
@@ -41,7 +41,6 @@ I gave myself a few weeks to get familiar with different plugins and configurati
 ## It’s fast
 
 Obsidian runs locally, which means everything is super fast. Open the app, your vault loads, and you’re off. 
-
 
 ## Linked notes will make your own personal Wikipedia
 

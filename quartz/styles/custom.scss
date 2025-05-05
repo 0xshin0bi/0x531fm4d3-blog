@@ -1,3 +1,17 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+
+/* Light mode: strong turquoise gradient */
+h1 { color: #006d6f; }  /* dark turquoise */
+h1 { color: #009c9f; }  /* medium-dark turquoise */
+h2 { color: #00b8b4; }  /* mid turquoise */
+h3 { color: #33d4cf; }  /* light turquoise */
+h5 { color: #99ece9; }  /* very light turquoise */
+
+/* Dark mode: same gradient but brighter for contrast */
+@media (prefers-color-scheme: dark) {
+    h1 { color: #009c9f; }  /* medium-dark turquoise */
+    h2 { color: #00b8b4; }  /* mid turquoise */
+    h3 { color: #33d4cf; }  /* light turquoise */
+    h4 { color: #99ece9; }  /* very light turquoise */
+}
