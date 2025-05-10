@@ -1,7 +1,10 @@
 ---
-title: My learning vault
+title: Effective notes with Obsidian
 draft: false
 tags:
+  - Obsidian
+  - AtomicNotes
+  - EffectiveStudy
 ---
 # What to expect in here?
 
@@ -73,7 +76,7 @@ a vault is simply the folder on our local file system where obsidian stores your
 
 ## why does frontmatter matter? 
 
-as mentioned before, frontmatter is the yaml structure located on the note's top. it could be queried using Dataview into lists and tables, which can provide a high-level overview of whatever's in your vault. keep in mind that at this time, **there's no native way to query other information from within the note itself other than frontmatter**.
+as mentioned before, frontmatter is the yaml structure located on the note's top. it could be queried using Dataview into lists and tables, which can provide a high-level overview of whatever's in your vault. keep in mind that at this time, **there's no native way to query other information from within the note itself other than frontmatter** (though possible through python scripts with Python Scripter).l
 
 # ./My vault --verbose
 
@@ -89,7 +92,7 @@ below are the community plugins installed on the Vault. each has its own short d
 Templater is a powerful template engine for Obsidian that automates note creation using JavaScript-based logic. It enables dynamic content generation, user input prompts, and advanced workflows within templates. I use JavaScript snippets in the templates' frontmatter to quickly insert data when creating a new note, and by doing so ensure that important metadata related to each note is properly documented.
 
 ![[Pasted image 20250428161711.png]]
-_how the snippets like in the templates_
+_how the snippets look like in the templates' frontmatter_
 
 ![[Pasted image 20250428154018.png]]
 _an example of how the JS takes affect when creating a new note_
@@ -164,47 +167,88 @@ Update Time on Edit helps maintain accurate metadata by automatically recording 
 
 # Templates
 
-in this section I will list and provide details for both each templates frontmatter values and note's headlines, along with explanation for them.
-before I go deeper, i'll present the four different templates I'm using, along with correlating examples of what kind of content I might cover in each one:
-1. **origin** - this note is intended for each resource I am currently studying (book, course, research, etc...)
-	1. *say i'm learning malware analysis from some youtuber. i'll save useful information that will help me get back to where i stopped*
-2. **system** - this note is intended for each new system i encounter
-	1. _i encountered x64dbg for the first time. here i'll save cheatsheet info on how to use the system, some pre-config stuff to help me save time if i'll ever set it up from scratch, etc._
-3. **technical explanation** - this type is intended for hands-on step by step explanation of using certain system to perform wanted action.
-	1. _i could describe how can I manually extract decrypted pe file from memory using x64dbg_
-4. **term** - this note is intended to describe more theoretical knowledge
-	1. _i could describe mapped vs unmapped pe files_
+in this section I will list and provide details for both each template's frontmatter key pairs and note's headlines. for each template type, i'll give a simple example of what might I capture in each (styled in _italic_). explanations for each frontmatter key-pair or headline is in the frontmatter/note prototype after each line. i'll skip explaining key-pairs/headlines already explain previsouly.**
+**before I go deeper, i'll present the four different templates I'm using, along with correlating examples of what kind of content I might cover in each one:**
 
-## Templates Structure
+## Origin
 
-### Origin
+This note is intended for each resource I am currently studying (book, course, research, etc...).
+*say i'm diving into a book dealing with windows internals. The "origin" in this case is the book itself. here I'll save useful information (see in [[content/index#^e6ff4a|"Origin headlines"]] below)
 
-#### frontmatter
+###  Origin frontmatter
+
+```yaml
+created: 2024-12-22T08:34
+updated: 2025-04-21T15:54 // updated automatic by Update Time on Edit. 
+origin_value: <% tp.file.title %> // grabs the title as is 
+type: origin // useful key-pair to query notes from specific types.
+started: <%tp.system.suggester(["yes","no"],[true,false],throw_on_cancel=false, placeholder="started writing?")%> // have I started going over the resource?
+aliases:
+  - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %> // captures the origin name without the prefix I configured through QuickAdd. this way, linking this current note on another note will appear cleaner.
+```
+### Origin headlines^OriginHeadlines^e6ff4a
+
+```text
+# Origin Link // link to the local pdf/URL
+
+# Currently At // contains a yaml with the following key-pairs:
+'' 
+Page/Minute: // which page/minute am I at on the book/video
+Headline: "" // for books, under what headline is the point i stopped at.
+Text: "" // specific line where i stopped at.
+Current term editing: // which term related to the origin i'm currently at (incase I stopped middle writing)
+''
+# Summary // if it's a short resource, a small summary of what's it's about
+
+# Concepts Learned // self explanatory
+
+# Related Origins // self explanatory
+
+# References // link to related technical explanations/terms
+```
+## System
+
+this note is intended for each new system I encounter and wish to understand better.
+_while going through the Windows internals book, I encountered Windbg. I'll open this template for it._
+
+### System frontmatter
 
 ```yaml
 created: 2024-12-22T08:34
 updated: 2025-04-21T15:54
 origin_value: <% tp.file.title %>
-type: origin
-started: <%tp.system.suggester(["yes","no"],[true,false],throw_on_cancel=false, placeholder="started writing?")%> // have I started going over the resource?
+type: system
 aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
+cssclasses:
+  - dv-equal-columns
+status: in progress
+maturity:  // helps me understand if it is a note i need to work on more. here I insert baby/child/adult
 ```
-#### Note headlines
-
+### System headlines
 ```text
-# Origin Link
 
-# Currently At
+# Overview // general background on the system
 
-# Summary
+# Use cases // when do i use this system. either general cases or links to technical explanation notes. 
 
-# Concepts Learned
+# Common Commands/Functions // self explanatory
 
-# Related Origins
+# Customizations // incase the system requires some preperations or additional installations to make it work properly.
 
-# References
+# Relevant Links // links to local notes (terms, technical explanations), external resources.
 ```
+
+### Technical explanation
+
+ this type is intended for hands-on step by step explanation of using certain system to perform wanted action.
+ _in the book they discussed how to look at the PEB structure in Windbg. This is where i'll capture it._
+3. **term** - this note is intended to describe more theoretical knowledge
+	1. _i could describe mapped vs unmapped pe files_
+
+
+
+
 
 
 
