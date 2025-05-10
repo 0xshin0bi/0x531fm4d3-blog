@@ -9,7 +9,7 @@ tags:
 # What to expect in here?
 
 In this blog, I will talk about my note-taking experience with Notion and the various cons I encountered while using it. I will then highlight the Obsidian features that significantly improved both my note-taking process effectively making my notes much better. After briefly explaining how I structured my Vault, I will present my setup, including templates (with some JavaScript snippets), folder organization, and the plugins I use. For everyone who wants to give it a try, I also provide a link to a ready-to-download Vault hosted on my GitHub.
-**Spoiler alert** - No AI whatsoever in this vault :), while I sometime use llm for finding good resources or summarizing them for understanding, I find my learning more effective when I write notes in my own words.
+**Spoiler alert** - No AI whatsoever in this vault :), while I often use llm for finding good resources or summarizing them for understanding, I find my learning much more effective when I write notes in my own words.
 
 # The struggles — my note-taking experience before Obsidian
 
@@ -204,11 +204,11 @@ Current term editing: // which term related to the origin i'm currently at (inca
 
 # Related Origins // self explanatory
 
-# References // link to related technical explanations/terms
+# Relavant links // links to related internal notes or external resources
 ```
 ## System
 
-this note is intended for each new system I encounter and wish to understand better.
+this note type is intended for each new system I encounter and wish to understand better.
 _while going through the Windows internals book, I encountered Windbg. I'll open this template for it._
 
 ### System frontmatter
@@ -222,7 +222,7 @@ aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
 cssclasses:
   - dv-equal-columns
-status: in progress
+status: in progress //whether i finished writing this note or not.
 maturity:  // helps me understand if it is a note i need to work on more. here I insert baby/child/adult
 ```
 ### System headlines
@@ -236,19 +236,95 @@ maturity:  // helps me understand if it is a note i need to work on more. here I
 
 # Customizations // incase the system requires some preperations or additional installations to make it work properly.
 
-# Relevant Links // links to local notes (terms, technical explanations), external resources.
+# Relevant Links
 ```
 
-### Technical explanation
+## Technical explanation
 
- this type is intended for hands-on step by step explanation of using certain system to perform wanted action.
+ this note type is intended for hands-on step by step explanation of using certain system to perform wanted action.
  _in the book they discussed how to look at the PEB structure in Windbg. This is where i'll capture it._
-3. **term** - this note is intended to describe more theoretical knowledge
-	1. _i could describe mapped vs unmapped pe files_
 
 
+### Technical explanation frontmatter 
+
+```yaml
+created: 2024-12-22T08:34
+updated: 2025-04-22T13:00
+term_value: <% tp.file.title %>
+type: technical_explanation
+origin_value: <%* const files = app.vault.getFiles().filter(f => f.path.startsWith('01 - Origins/') || f.path.startsWith('04 - Systems/')).map(f => f.basename), selectedFile = await tp.system.suggester(['Please choose the origin\'s value', ...files], ['', ...files]); tR += selectedFile || 'No selection'; %> //the origin from which i got to this technical explanation part. JS prompts a dropdown of existing origin files located in the origin folder.
+category: <% tp.system.suggester(["Windows internals","Malware Analysis","Malware Development","Object oriented programming","C language"],["windows_internals","malware_analysis","malware_development","object oriented programming","c_language"],throw_on_cancel=false, placeholder="Technical explanation category?")%> //prompts a dropdown of hardcoded categories to which the note relates to
+aliases:
+  - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
+cssclasses:
+  - dv-equal-columns
+status: in progress 
+maturity: baby
+```
+
+### Technical explanation headlines
 
 
+```text
+# Objective // what does this note's instruction achieve
 
 
+# Tooling // what tools are needed for it
 
+
+# Steps // the main part where I document step-by-step
+
+
+# Notes // important things I should remember in the future (bugs, mistakes i've previously made, etc)
+
+
+# Relevant Links
+```
+
+
+## Term
+
+**term** - this note is intended to describe more theoretical knowledge.
+_I first encounter what is  a PEB. this is where i'll capture the details. _
+
+
+### Term frontmatter
+
+```yaml
+created: 2024-12-22T08:34
+updated: 2025-05-06T08:39
+term_value: <% tp.file.title %>
+type: term
+origin_value: <%* const files = app.vault.getFiles().filter(f => ['01 - Origins', '04 - Systems'].some(folder => f.path.startsWith(folder + '/'))).map(f => f.basename), selectedFile = await tp.system.suggester(['Please choose the origin\'s value', ...files], ['', ...files]); tR += selectedFile || 'No selection'; %>
+category: <% tp.system.suggester(["Windows internals","Malware Analysis","Malware Development","Object oriented programming","AI"],["windows_internals","malware_analysis","malware_development","object oriented programming","ai"],throw_on_cancel=false, placeholder="Term category?")%>
+cssclasses:
+  - dv-equal-columns
+aliases:
+  - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
+status: in progress
+maturity: baby
+```
+
+### Term headlines
+
+```text
+# Summary // self explantory
+
+
+# Detailed Description // the main headline where i breakdown the term.
+
+
+# Structure // here i store screenshots, function prototypes, strucutures, charts; anything that helps me understand the term visually.
+
+
+# Contextual Use // When/how this term becomes relevant.
+
+
+# Related Links  
+```
+
+# Vault's folders
+
+while Obsidian doesn't require folders to function, I still like it to be organized like that visually. here's a screenshot of the folders and explanations for the ones that aren't that obvious:
+
+![[Pasted image 20250510130827.png]]
