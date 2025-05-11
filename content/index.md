@@ -167,13 +167,15 @@ Update Time on Edit helps maintain accurate metadata by automatically recording 
 
 # Templates
 
-in this section I will list and provide details for both each template's frontmatter key pairs and note's headlines. for each template type, i'll give a simple example of what might I capture in each (styled in _italic_). explanations for each frontmatter key-pair or headline is in the frontmatter/note prototype after each line. i'll skip explaining key-pairs/headlines already explain previsouly.**
+in this section I will list and provide details for both each template's frontmatter key pairs and note's headlines. for each template type, i'll give a simple example of what might I capture in each (styled in _italic_). explanations for each frontmatter key-pair or headline is in the frontmatter/note prototype after each line. i'll skip explaining key-pairs/headlines already explain previously.**
+
 **before I go deeper, i'll present the four different templates I'm using, along with correlating examples of what kind of content I might cover in each one:**
 
 ## Origin
 
 This note is intended for each resource I am currently studying (book, course, research, etc...).
-*say i'm diving into a book dealing with windows internals. The "origin" in this case is the book itself. here I'll save useful information (see in [[content/index#^e6ff4a|"Origin headlines"]] below)
+
+_say i'm diving into a book dealing with windows internals. The "origin" note in this case is the book itself, where I'll save useful information._
 
 ###  Origin frontmatter
 
@@ -186,7 +188,7 @@ started: <%tp.system.suggester(["yes","no"],[true,false],throw_on_cancel=false, 
 aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %> // captures the origin name without the prefix I configured through QuickAdd. this way, linking this current note on another note will appear cleaner.
 ```
-### Origin headlines^OriginHeadlines^e6ff4a
+### Origin headlines
 
 ```text
 # Origin Link // link to the local pdf/URL
@@ -209,6 +211,7 @@ Current term editing: // which term related to the origin i'm currently at (inca
 ## System
 
 this note type is intended for each new system I encounter and wish to understand better.
+
 _while going through the Windows internals book, I encountered Windbg. I'll open this template for it._
 
 ### System frontmatter
@@ -242,6 +245,7 @@ maturity:  // helps me understand if it is a note i need to work on more. here I
 ## Technical explanation
 
  this note type is intended for hands-on step by step explanation of using certain system to perform wanted action.
+ 
  _in the book they discussed how to look at the PEB structure in Windbg. This is where i'll capture it._
 
 
@@ -268,19 +272,14 @@ maturity: baby
 ```text
 # Objective // what does this note's instruction achieve
 
-
 # Tooling // what tools are needed for it
-
 
 # Steps // the main part where I document step-by-step
 
-
 # Notes // important things I should remember in the future (bugs, mistakes i've previously made, etc)
-
 
 # Relevant Links
 ```
-
 
 ## Term
 
@@ -328,3 +327,7 @@ maturity: baby
 while Obsidian doesn't require folders to function, I still like it to be organized like that visually. here's a screenshot of the folders and explanations for the ones that aren't that obvious:
 
 ![[Pasted image 20250510130827.png]]
+
+# Home note
+
+this is a special note where i hold some data that gives me more control over the Vault. it holds:  my Tasks table 
