@@ -330,4 +330,4 @@ while Obsidian doesn't require folders to function, I still like it to be organi
 
 # Home note
 
-this is a special note where i hold some data that gives me more control over the Vault. it holds:  my Tasks table 
+this is a special note where i hold some data that gives me more control over the Vault. it holds:  my Tasks table, the different queries utilizing Dataview, topics that i stumbled upon that i want to document.
