@@ -55,7 +55,7 @@ A by product of the previous point: I stopped writing massive, monolithic summar
 
 ## Second brain
 
-Obsidian is essentially my second brain that never forgets. complicated topics that take time to digest and understand are written in my own words and saved in it forever, so I can pull them out whenever I need them4.
+Obsidian is essentially my second brain that never forgets. complicated topics that take time to digest and understand are written in my own words and saved in it forever, so I can pull them out whenever I need them.
 
 ## Templates for structure
 
@@ -70,7 +70,6 @@ Since plugins are just JavaScript under the hood, you can (and should honestly) 
 
 Every note can have a YAML metadata block at the note's top (called **frontmatter** in Obsidian)  where you can store key-value pairs for different purposes. With a little help from community plugins like Templater, I even set things up so I get prompted to fill in certain metadata fields when I create a new note. This way, I don’t forget to capture the important stuff. I personally use them for additional note categorization and sub-categorization, linking the notes to the resource where I initially read about them, and easen the search by adding aliases to the notes.
 
-
 # Some explanations before the vault setup
 
 ## What is a Vault?
@@ -80,6 +79,12 @@ A vault is simply the folder on our local file system where obsidian stores your
 ## Why does frontmatter matter? 
 
 As mentioned before, frontmatter is the yaml structure located on the note's top. it could be queried using Dataview into lists and tables, which can provide a high-level overview of whatever's in your vault. keep in mind that at this time, **there's no native way to query other information from within the note itself other than frontmatter** (though possible through python scripts with Python Scripter).l
+
+## What are tags in Obsidian?
+
+Tags are keywords that help you find what you're looking for. They can be used in two main ways:
+1. You can search for a tag directly to see all notes that include it.
+2. You can use tags in Dataview queries to act as powerful filters.
 
 # ./My vault --verbose
 
@@ -165,17 +170,21 @@ _how Recent Files look like_
 
 [Update Time on Edit](https://github.com/beaussan/update-time-on-edit-obsidian) helps maintain accurate metadata by automatically recording when a note was last modified (in the frontmatter. I use it to easily keep track of the last time i made changes to my notes.
 
-# Templates
+## Tags
+
+I use tags in my "term" and "technical explanation" notes for categorization. Since a single note can relate to multiple categories, tags have proven to be the most convenient method for this purpose.
+
+## Templates
 
 in this section I will list and provide details for both each template's frontmatter key pairs and note's headlines. for each template type, I'll give a simple example of what might I capture in each (styled in _italic_). explanations for each frontmatter key-pair or headline is in the frontmatter/note prototype after each line. I'll skip key-pairs/headlines already explained previously.
 
-## Origin
+### Origin
 
 This note is intended for each resource I am currently studying (book, course, research, etc...).
 
 _Say I'm diving into a book dealing with windows internals. The "origin" note in this case is the book itself, where I'll save useful information._
 
-###  Origin frontmatter
+#### Origin frontmatter
 
 ```yaml
 created: 2024-12-22T08:34
@@ -186,7 +195,7 @@ started: <%tp.system.suggester(["yes","no"],[true,false],throw_on_cancel=false, 
 aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %> // captures the origin name without the prefix I configured through QuickAdd. this way, linking this current note on another note will appear cleaner.
 ```
-### Origin headlines
+#### Origin headlines
 
 ```text
 # Origin Link // link to the local pdf/URL
@@ -206,13 +215,13 @@ Current term editing: // which term related to the origin i'm currently at (inca
 
 # Relavant links // links to related internal notes or external resources
 ```
-## System
+### System
 
 this note type is intended for each new system I encounter and wish to understand better.
 
 _while going through the Windows internals book, I encountered Windbg. I'll open this template for it._
 
-### System frontmatter
+#### System frontmatter
 
 ```yaml
 created: 2024-12-22T08:34
@@ -223,10 +232,8 @@ aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
 cssclasses:
   - dv-equal-columns
-status: in progress //whether i finished writing this note or not.
-maturity:  // helps me understand if it is a note i need to work on more. here I insert baby/child/adult
 ```
-### System headlines
+#### System headlines
 ```text
 
 # Overview // general background on the system
@@ -240,14 +247,14 @@ maturity:  // helps me understand if it is a note i need to work on more. here I
 # Relevant Links
 ```
 
-## Technical explanation
+### Technical explanation
 
  this note type is intended for hands-on step by step explanation of using certain system to perform wanted action.
  
  _in the book they discussed how to look at the PEB structure in Windbg. This is where i'll capture it._
 
 
-### Technical explanation frontmatter 
+#### Technical explanation frontmatter 
 
 ```yaml
 created: 2024-12-22T08:34
@@ -255,19 +262,20 @@ updated: 2025-04-22T13:00
 term_value: <% tp.file.title %>
 type: technical_explanation
 origin_value: <%* const files = app.vault.getFiles().filter(f => f.path.startsWith('01 - Origins/') || f.path.startsWith('04 - Systems/')).map(f => f.basename), selectedFile = await tp.system.suggester(['Please choose the origin\'s value', ...files], ['', ...files]); tR += selectedFile || 'No selection'; %> //the origin from which i got to this technical explanation part. JS prompts a dropdown of existing origin files located in the origin folder.
-category: <% tp.system.suggester(["Windows internals","Malware Analysis","Malware Development","Object oriented programming","C language"],["windows_internals","malware_analysis","malware_development","object oriented programming","c_language"],throw_on_cancel=false, placeholder="Technical explanation category?")%> //prompts a dropdown of hardcoded categories to which the note relates to
 aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
 cssclasses:
   - dv-equal-columns
 status: in progress 
-maturity: baby
+maturity: baby  // helps me understand if it is a note i need to work on more. here I insert baby/child/adult
 ```
 
-### Technical explanation headlines
+#### Technical explanation headlines
 
 
 ```text
+# Categories // storing tags of note's related categories
+
 # Objective // what does this note's instruction achieve
 
 # Tooling // what tools are needed for it
@@ -279,13 +287,13 @@ maturity: baby
 # Relevant Links
 ```
 
-## Term
+### Term
 
 **term** - this note is intended to describe more theoretical knowledge.
 _I first encounter what is  a PEB. this is where i'll capture the details. _
 
 
-### Term frontmatter
+#### Term frontmatter
 
 ```yaml
 created: 2024-12-22T08:34
@@ -293,7 +301,6 @@ updated: 2025-05-06T08:39
 term_value: <% tp.file.title %>
 type: term
 origin_value: <%* const files = app.vault.getFiles().filter(f => ['01 - Origins', '04 - Systems'].some(folder => f.path.startsWith(folder + '/'))).map(f => f.basename), selectedFile = await tp.system.suggester(['Please choose the origin\'s value', ...files], ['', ...files]); tR += selectedFile || 'No selection'; %>
-category: <% tp.system.suggester(["Windows internals","Malware Analysis","Malware Development","Object oriented programming","AI"],["windows_internals","malware_analysis","malware_development","object oriented programming","ai"],throw_on_cancel=false, placeholder="Term category?")%>
 cssclasses:
   - dv-equal-columns
 aliases:
@@ -302,35 +309,37 @@ status: in progress
 maturity: baby
 ```
 
-### Term headlines
+#### Term headlines
 
 ```text
-# Summary // self explantory
+# Categories
 
+# Summary // self explantory
 
 # Detailed Description // the main headline where i breakdown the term.
 
-
 # Structure // here i store screenshots, function prototypes, strucutures, charts; anything that helps me understand the term visually.
 
-
 # Contextual Use // When/how this term becomes relevant.
-
 
 # Related Links  
 ```
 
-# Vault's folders
+## Vault's folders
 
-while Obsidian doesn't require folders to function, I still like it to be organized like that visually. here's a screenshot of the folders and explanations for the ones that aren't that obvious:
+While Obsidian doesn’t require folders to function, I still prefer to keep things visually organized that way. Below is a screenshot of my folder structure, along with explanations for the ones that aren’t immediately obvious:
 
 ![[Pasted image 20250510130827.png]]
 
-# Home note
+## Home note
 
-this is a special note where i hold some data that gives me more control over the Vault. currently it holds:  my Tasks table, the different queries utilizing Dataview and topics that i stumbled upon that I want to add to the vault.
+This is a special note where I store data that gives me more control over the vault. Currently, it contains my tasks table, various Dataview queries, and a list of topics I've stumbled upon that I want to add to the vault.
 
 
 # Great Obsidian guidance links
 
-- [] insert Tags section
+Shoutout for these content creators that helped me formulate my ideal note-taking vault :)
+
+https://www.youtube.com/@FromSergio
+https://www.youtube.com/@nicolevdh
+https://www.youtube.com/@BenCodeZen
