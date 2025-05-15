@@ -11,6 +11,8 @@ tags:
 In this blog, I will talk about my note-taking experience with Notion and the various cons I encountered while using it. I will then highlight the Obsidian features that significantly improved both my note-taking process, effectively making my notes much more usable and **effective to remember**. After briefly explaining how I structured my Vault, I will present my setup, including templates (with some JavaScript snippets), folder organization, and the plugins I use. For everyone who wants to give it a try, I also provide a link to a ready-to-download Vault hosted on my GitHub.
 **Spoiler alert** - No AI whatsoever in this vault :), while I often use llm for finding good resources or summarizing them for understanding, I find my learning much more effective when I write notes in my own words.
 
+**link to the Vault's download [here](https://github.com/0x531fm4d3/knowledge-base-vault)**
+
 # The struggles — my note-taking experience before Obsidian
 
 For a long time, I struggled making my learning notes effective, to the point they will be re-usable on a daily basis. I bounced between Notion and Evernote, trying to summarize what I was learning, but the fact I was never going back to the notes clearly stated I'm doing something wrong. A few things made it especially frustrating while using Notion:
@@ -188,7 +190,7 @@ _Say I'm diving into a book dealing with windows internals. The "origin" note in
 
 ```yaml
 created: 2024-12-22T08:34
-updated: 2025-04-21T15:54 // updated automatic by Update Time on Edit. 
+updated: 2025-04-21T15:54 // auto updates by the "Update Time on Edit" plugin. 
 origin_value: <% tp.file.title %> // grabs the title as is 
 type: origin // useful key-pair to query notes from specific types.
 started: <%tp.system.suggester(["yes","no"],[true,false],throw_on_cancel=false, placeholder="started writing?")%> // have I started going over the resource?
@@ -266,7 +268,6 @@ aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
 cssclasses:
   - dv-equal-columns
-status: in progress 
 maturity: baby  // helps me understand if it is a note i need to work on more. here I insert baby/child/adult
 ```
 
@@ -305,7 +306,6 @@ cssclasses:
   - dv-equal-columns
 aliases:
   - <% tp.file.title.replace(/^.*_\d{4}-\d{2}-\d{2} - /, '') %>
-status: in progress
 maturity: baby
 ```
 
