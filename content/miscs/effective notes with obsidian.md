@@ -101,31 +101,31 @@ below are the community plugins installed on the Vault. each has its own short d
 
 [Templater](https://github.com/SilentVoid13/Templater) is a powerful template engine for Obsidian that automates note creation using JavaScript-based logic. It enables dynamic content generation, user input prompts, and advanced workflows within templates. I use JavaScript snippets in the templates' frontmatter to quickly insert data when creating a new note, and by doing so ensure that important metadata related to each note is properly documented. Some examples in the screenshot below:
 
-![[Pasted image 20250428161711.png]]
+![[Pasted image 20250428161711 1.png]]
 _how the snippets look like in the templates' frontmatter_
 
-![[Pasted image 20250428154018.png]]
+![[Pasted image 20250428154018 1.png]]
 _an example of how the JS takes affect when creating a new note_
 
 ### QuickAdd
 
 [QuickAdd](https://github.com/chhoumann/quickadd) goes hand in hand with Templater. The plugin is ideal for building fast, repeatable workflows with emphasis on user-defined actions, templates, and macros. I use it to quickly create different types of notes through a keyboard shortcut and a few mouse clicks.
 
-![[Pasted image 20250428154212.png]]
+![[Pasted image 20250428154212 1.png]]
 _an example of quickadd used to create notes with a certain prefix, in a specific folder (couldn't capture in the SS all the options possible_
 
 ### Omnisearch
 
 [Omnisearch](https://github.com/scambier/obsidian-omnisearch) provides an advanced search experience in Obsidian, allowing you to query your entire vault by content, tags, links, and other metadata. It also offers the option to index PDFs and images through OCR, which I find particularly useful. The search algorithm is well-designed, making it easy to quickly find exactly what you are looking for.
 
-![[Pasted image 20250428154334.png]]
+![[Pasted image 20250428154334 1.png]]
 _showing Omnisearch's awesome capabilities_
 
 ### Dataview
 
 [Dataview](https://github.com/blacksmithgu/obsidian-dataview) is essential for building dashboards, summaries, and structured views across your vault based on your notes frontmatter values and tags. it has basic query options, but also support more advance queries based on JS. I use it for grouping my vault's tasks, and creating a per-resource table of terms i encountered in them.
 
-![[Pasted image 20250428154803.png]]
+![[Pasted image 20250428154803 1.png]]
 _using dataview to show all tasks open in the vault in one place_
 
 ### Excalidraw
@@ -136,14 +136,14 @@ _using dataview to show all tasks open in the vault in one place_
 
 [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) monitors your installed plugins and records when they are updated. It provides a changelog view directly inside Obsidian for easier tracking of new features and fixes. The plugin helps maintain awareness of changes that could affect your workflows, or potentially malicious code that found its way into the plugin god forbid :).
 
-![[Pasted image 20250428160148.png]]
+![[Pasted image 20250428160148 1.png]]
 _plugin update tracker summary pulled from github; also a direct link to the diff from last version_
 
 ### Settings Search
 
 [Settings Search](https://github.com/javalent/settings-search) enhances Obsidian’s settings interface by adding a search bar to it. It saves alot of time looking for what you're looking for.
 
-![[Pasted image 20250428160330.png]]
+![[Pasted image 20250428160330 1.png]]
 
 
 ### Colored Text
@@ -154,14 +154,14 @@ _plugin update tracker summary pulled from github; also a direct link to the dif
 
 [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) customizes the appearance of code blocks in Obsidian by allowing fine-grained control over fonts, backgrounds, padding, and more. It works with both light and dark themes. it just looks alot nicer than the native Obsidian code blocks 
 
-![[Pasted image 20250428161919.png]]
+![[Pasted image 20250428161919 1.png]]
 _supporting syntax highlighting of many coding languages and different text types_
 
 ### Recent Files
 
 [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) creates a dynamic list of your most recently opened or edited notes in Obsidian. It adds a panel or command for quick access to recently used documents. it makes it very easy editing multiple notes at once without wasting time looking for the last few notes you were in.
 
-![[Pasted image 20250428162043.png]]
+![[Pasted image 20250428162043 1.png]]
 _how Recent Files look like_
 
 ### Tasks
