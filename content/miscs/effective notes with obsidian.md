@@ -86,7 +86,7 @@ As mentioned before, frontmatter is the yaml structure located on the note's top
 
 Tags are keywords that help you find what you're looking for. They can be used in two main ways:
 1. You can search for a tag directly to see all notes that include it.
-2. You can use tags in Dataview queries to act as powerful filters.
+2. You can use tags in Dataview queries to act as great filters.
 
 # ./My vault --verbose
 
@@ -99,7 +99,7 @@ below are the community plugins installed on the Vault. each has its own short d
 
 ### Templater
 
-[Templater](https://github.com/SilentVoid13/Templater) is a powerful template engine for Obsidian that automates note creation using JavaScript-based logic. It enables dynamic content generation, user input prompts, and advanced workflows within templates. I use JavaScript snippets in the templates' frontmatter to quickly insert data when creating a new note, and by doing so ensure that important metadata related to each note is properly documented. Some examples in the screenshot below:
+[Templater](https://github.com/SilentVoid13/Templater) is a template engine for Obsidian that automates note creation using JavaScript-based logic. It enables dynamic content generation, user input prompts, and advanced workflows within templates. I use JavaScript snippets in the templates' frontmatter to quickly insert data when creating a new note, and by doing so ensure that important metadata related to each note is properly documented. Some examples in the screenshot below:
 
 ![[Pasted image 20250428161711 1.png]]
 _how the snippets look like in the templates' frontmatter_
@@ -166,7 +166,7 @@ _how Recent Files look like_
 
 ### Tasks
 
-[Tasks](https://github.com/obsidian-tasks-group/obsidian-tasks) turns standard markdown checkboxes into powerful task management elements, with support for due dates, priorities, recurring tasks, and queries. It enables you to track and organize tasks directly within your notes. I use it mainly when there are aspects that I haven't covered yet in certain notes and do not want to forget. I especially like using Dataview to present current open tasks across the Vault in a single location.
+[Tasks](https://github.com/obsidian-tasks-group/obsidian-tasks) turns standard markdown checkboxes into awesome task management elements, with support for due dates, priorities, recurring tasks, and queries. It enables you to track and organize tasks directly within your notes. I use it mainly when there are aspects that I haven't covered yet in certain notes and do not want to forget. I especially like using Dataview to present current open tasks across the Vault in a single location.
 
 ### Update Time on Edit
 
