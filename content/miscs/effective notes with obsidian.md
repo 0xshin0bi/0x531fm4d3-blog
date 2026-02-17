@@ -5,6 +5,7 @@ tags:
   - Obsidian
   - AtomicNotes
   - EffectiveStudy
+published: 2025-06-10
 ---
 # What to expect in here?
 
